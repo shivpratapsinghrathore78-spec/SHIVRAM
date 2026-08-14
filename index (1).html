@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAJPUTI DRESS — Fresh Finds, Best Prices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<!-- Site styles -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">✨ FREE DELIVERY ON PREPAID ORDERS &nbsp;•&nbsp; DM ON WHATSAPP FOR CUSTOM SIZE ✨</div>
+
+<header class="brandbar">
+  <div class="brand">
+    <div class="brand-mark">R</div>
+    <div class="brand-name">RAJPUTI DRESS</div>
+  </div>
+  <button class="btn-shopnow" style="padding:9px 18px; font-size:13px;" onclick="scrollToProducts()">Shop Now</button>
+</header>
+
+<section class="hero" style="background-image:url('https://i.ibb.co/wrs9Q6yz/istockphoto-2153511740-1024x1024.jpg');">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Rajasthan • Straight From The Bazaar</span>
+    <h1>RAJPUTI DRESS</h1>
+    <p class="tagline">Fresh Finds, Best Prices ✨<br>Trendy clothes, amazing styles aur pocket-friendly prices! 🛍️👗</p>
+    <button class="btn-shopnow" onclick="scrollToProducts()">Shop Now ↓</button>
+  </div>
+</section>
+<div class="scallop-gold"></div>
+
+<section class="section" id="products">
+  <div class="section-head">
+    <span class="eyebrow">Handpicked This Week</span>
+    <h2>Our Collection</h2>
+  </div>
+
+  <div class="carousel-wrap">
+    <div class="carousel" id="carousel">
+      <!-- product cards injected by script.js -->
+    </div>
+    <div class="carousel-arrows">
+      <button class="arrow-btn" onclick="scrollCarousel(-1)">‹</button>
+      <button class="arrow-btn" onclick="scrollCarousel(1)">›</button>
+    </div>
+  </div>
+</section>
+
+<div class="scallop" style="background:var(--cream); background-image: radial-gradient(circle at 11px 0px, transparent 10px, var(--ivory) 11px);"></div>
+
+<section class="section alt">
+  <div class="trust-strip">
+    <div class="trust-item"><span class="ic">🚚</span><span class="lbl">Fast Shipping<br>Pan India</span></div>
+    <div class="trust-item"><span class="ic">💯</span><span class="lbl">Quality<br>Checked</span></div>
+    <div class="trust-item"><span class="ic">↩️</span><span class="lbl">Easy<br>Exchange</span></div>
+    <div class="trust-item"><span class="ic">💬</span><span class="lbl">WhatsApp<br>Support</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand-name" style="font-family:'Yeseva One',serif; font-size:20px;">RAJPUTI DRESS</div>
+  <p>Fresh Finds, Best Prices ✨ Trendy clothes, amazing styles aur pocket-friendly prices!</p>
+  <p>Order queries: <a class="foot-email" href="mailto:shivshivpratap429@gmail.com">shivshivpratap429@gmail.com</a></p>
+  <p>© <span id="year"></span> Rajputi Dress. All rights reserved.</p>
+</footer>
+
+<div class="floating-stack">
+  <button class="fab fab-cart" onclick="openDrawer()" aria-label="Open cart">
+    🛒
+    <span class="cart-badge" id="cartBadge">0</span>
+  </button>
+  <a class="fab fab-wa" href="https://wa.me/919251066534" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.15-4.94-4.35-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.65.78 1.93.92.29.14.48.21.55.33.07.12.07.7-.17 1.38Z"/></svg>
+  </a>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <h3>Your Cart</h3>
+    <button class="drawer-close" onclick="closeDrawer()">×</button>
+  </div>
+
+  <div class="drawer-body" id="drawerBody">
+    <!-- cart items injected here -->
+
+    <form class="drawer-form" id="orderForm">
+      <div class="field">
+        <label for="custName">Full Name</label>
+        <input type="text" id="custName" placeholder="e.g. Priya Sharma" required>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="custPhone">Phone Number</label>
+          <input type="tel" id="custPhone" placeholder="10-digit mobile" required pattern="[0-9]{10}" maxlength="10">
+        </div>
+        <div class="field">
+          <label for="custPin">PIN Code</label>
+          <input type="text" id="custPin" placeholder="6-digit PIN" required pattern="[0-9]{6}" maxlength="6">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="custState">State</label>
+          <input type="text" id="custState" placeholder="e.g. Rajasthan" required>
+        </div>
+        <div class="field">
+          <label for="custCity">City / Town / Village</label>
+          <input type="text" id="custCity" placeholder="e.g. Jaipur" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="custHouse">House / Flat Number &amp; Street</label>
+        <input type="text" id="custHouse" placeholder="e.g. House No. 12, Near Ram Mandir" required>
+      </div>
+      <div class="form-error" id="formError"></div>
+    </form>
+  </div>
+
+  <div class="drawer-foot">
+    <div class="total-row">
+      <span class="lbl">Total (<span id="itemCount">0</span> items)</span>
+      <span class="amt" id="cartTotal">₹0</span>
+    </div>
+    <button class="btn-send" id="sendBtn" onclick="sendOrder()">📩 Send Order</button>
+    <div class="send-status" id="sendStatus"></div>
+  </div>
+</aside>
+
+<!-- Site logic -->
+<script src="script.js"></script>
+
+</body>
+</html>
